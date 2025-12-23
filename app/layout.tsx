@@ -27,7 +27,11 @@ const tiroBangla = Tiro_Bangla({
 
 export const metadata: Metadata = {
   title: "ইউটিউব ইনকাম এস্টিমেটর বাংলাদেশ ২০২৬ | BD Creator Calc",
-  description: "বাংলাদেশ থেকে ইউটিউবে কত ভিউতে কত টাকা পাওয়া যায়? ট্যাক্স এবং ব্যাংক চার্জ সহ সঠিক হিসাব জানুন।",
+  description: "বাংলাদেশ থেকে ইউটিউবে কত ভিউতে কত টাকা পাওয়া যায়?",
+  metadataBase: new URL('https://calculator.takaincome.com'), // Add this
+  alternates: {
+    canonical: '/', // This tells Google this is the main version
+  },
 };
 
 export default function RootLayout({

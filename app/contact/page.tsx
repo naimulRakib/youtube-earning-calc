@@ -7,7 +7,7 @@ export default function ContactUs() {
       
       <div className="bg-slate-50 p-8 rounded-xl border border-slate-200 mt-8">
         <h4 className="mt-0">General Inquiries</h4>
-        <p>Email: <strong>contact@takaincome.com</strong></p>
+        <p>Email: <strong>rakib@takaincome.com</strong></p>
         
         <h4>Office Address</h4>
         <p>Dhaka, Bangladesh</p>
