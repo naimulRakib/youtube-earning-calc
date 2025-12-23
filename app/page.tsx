@@ -29,7 +29,7 @@ export default function Home() {
       </div>
 
       {/* ২. ক্যালকুলেটর কন্টেইনার */}
-      <div className="max-w-6xl mx-auto px-4 -mt-10 mb-20 relative z-20">
+     <div className="min-h-[600px] w-full bg-white rounded-xl shadow-sm">
         <Calculator />
         
         {/* ৩. নতুন ফিচর্ড সেকশন (গাইডলাইন ও রিসোর্স) */}
