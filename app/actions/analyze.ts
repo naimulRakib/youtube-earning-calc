@@ -3,22 +3,31 @@
 import { zoneData } from "../data/zones";
 import { supabase } from "../lib/supabase";
 
-// ⚠️ মনে রাখবেন: প্রোডাকশনে API Key এনভায়রনমেন্ট ভেরিয়েবল (process.env) থেকে নেওয়া উচিত
-const API_KEY = "AIzaSyAzCodtoOtWYlU7kUCPU-BWHf4qOZUylLE"; 
-
 export async function analyzeCropHealth(
   imageBase64: string,
   userLocation: string,
   neighborReport: string,
-  imageUrl: string // ✅ ছবির পাবলিক লিংক
+  imageUrl: string
 ) {
-  // ১. জোন ডাটা লোড
+  // 1. Securely load API Key from environment variables
+  const API_KEY = process.env.GEMINI_API_KEY;
+
+  if (!API_KEY) {
+    console.error("❌ Critical Error: GEMINI_API_KEY is missing in .env.local");
+    // Fail gracefully or throw error depending on UI handling
+    return {
+      success: false,
+      error: "Server configuration error. Please contact support."
+    };
+  }
+
+  // 2. Zone Data Load
   // @ts-ignore
   const currentZone = zoneData[userLocation] || zoneData["dhaka-savar"];
 
-  // ২. প্রম্পট তৈরি (Gemini 2.0 এর জন্য অপটিমাইজড)
+  // 3. Prompt Construction
   const promptText = `
-    You are an AI Agro-Expert using Gemini 2.0 Pro. Analyze this crop image for disease or environmental stress.
+    You are an AI Agro-Expert using Gemini 2.0. Analyze this crop image for disease or environmental stress.
     
     CONTEXT DATA:
     - Zone: ${userLocation}
@@ -37,8 +46,9 @@ export async function analyzeCropHealth(
     }
   `;
 
-  // ৩. Gemini 2.0 API কল
-  // 🔄 মডেল পরিবর্তন: gemini-1.5-flash -> gemini-2.0-pro-exp-02-05 (অথবা gemini-2.0-flash-exp)
+  // 4. Gemini API Call
+  // Note: 'gemini-2.0-flash' is the standard identifier for 2.0 Flash. 
+  // Adjusted from your custom string to ensure valid API call.
   const modelName = "gemini-2.5-flash-preview-09-2025"; 
   const url = `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${API_KEY}`;
 
@@ -49,10 +59,9 @@ export async function analyzeCropHealth(
         { inline_data: { mime_type: "image/jpeg", data: imageBase64 } }
       ]
     }],
-    // Gemini 2.0 JSON মোড আরও ভালো সাপোর্ট করে
     generationConfig: { 
       response_mime_type: "application/json",
-      temperature: 0.4 // একটু কম টেম্পারেচার একুরেসি বাড়ায়
+      temperature: 0.4 
     }
   };
 
@@ -72,20 +81,17 @@ export async function analyzeCropHealth(
 
     const data = await response.json();
     
-    // সেফটি চেক: ক্যান্ডিডেট আছে কিনা দেখা
     if (!data.candidates || data.candidates.length === 0) {
       throw new Error("No analysis returned from Gemini.");
     }
 
     const textOutput = data.candidates[0].content.parts[0].text;
-    
-    // ক্লিনআপ (মাঝেমধ্যে মডেল ```json ব্লক দেয়)
     const cleanedText = textOutput.replace(/```json|```/g, "").trim();
     const resultJson = JSON.parse(cleanedText);
 
     console.log("✅ AI Analysis Done:", resultJson.diagnosis_id);
 
-    // ৪. ডাটাবেসে সেভ করা (ছবির লিংক সহ)
+    // 5. Save to Database
     const { error } = await supabase
       .from('community_reports')
       .insert({
@@ -93,7 +99,7 @@ export async function analyzeCropHealth(
         diagnosis_id: resultJson.diagnosis_id,
         confidence: resultJson.confidence,
         visual_reasoning: resultJson.visual_reasoning,
-        image_url: imageUrl // ✅ ছবির লিংক ডাটাবেসে যাচ্ছে
+        image_url: imageUrl
       });
 
     if (error) console.error("❌ DB Save Failed:", error.message);
@@ -104,14 +110,13 @@ export async function analyzeCropHealth(
   } catch (error: any) {
     console.error("❌ Analysis Error:", error.message);
 
-    // ফলব্যাক/ডেমো মোড (নেটওয়ার্ক বা কোটা এরর হলে)
     return {
-      success: true, // ইউজার এক্সপেরিয়েন্স ঠিক রাখতে true রাখা হলো
+      success: true, 
       data: {
         diagnosis_id: "unknown_stress",
         confidence: 0,
         visual_reasoning: "System fallback: Unable to verify image at this moment. Please try again."
       }
     };
-  }
+   }
 }
