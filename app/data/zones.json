@@ -1,0 +1,185 @@
+{
+  "dhaka-savar": {
+    "zone_name": "Savar Upazila, Dhaka (Industrial & Textile Hub)",
+    "soil_profile": {
+      "soil_type": "Deep Red Brown Terrace Soil (Madhupur Tract)",
+      "texture": "Clay Loam (লালচে এটেল মাটি)",
+      "avg_ph": "5.5 - 6.0",
+      "ph_status": "Acidic",
+      "organic_matter": "Low (1.5%)",
+      "major_deficiencies": ["Nitrogen", "Zinc", "Boron"],
+      "toxicity_risk": "Critical (Chromium VI, Lead, Cadmium, Microplastics)"
+    },
+    "crop_advice": {
+      "suitable_crops": ["Napier Grass", "Maize (Corn)", "Para Grass"],
+      "avoid_crops": ["Radish", "Carrot", "Spinach (Absorbs heavy metals)", "Rice (near rivers)"],
+      "irrigation_warning": "DANGER: Do not use water from Dhaleshwari, Bangshi, or Turag rivers. Contains raw chemical effluent."
+    },
+    "industrial_hotspots": [
+      {
+        "id": "savar_spot_01",
+        "name": "Savar Tannery Industrial Estate (Hemayetpur)",
+        "type": "Tannery Complex",
+        "pollutants": ["Chromium (VI)", "Sulfuric Acid", "Sodium Chloride"],
+        "coordinates": { "lat": 23.7845, "lng": 90.2528 },
+        "danger_radius_meter": 3000,
+        "impact": "Severe Soil Toxicity. Causes leaf scorching, root death, and stunted growth."
+      },
+      {
+        "id": "savar_spot_02",
+        "name": "Aminbazar Brick Kiln Cluster (Turag Bank)",
+        "type": "Brick Kiln",
+        "pollutants": ["Sulfur Dioxide (SO2)", "Coal Dust", "CO"],
+        "coordinates": { "lat": 23.7932, "lng": 90.3255 },
+        "danger_radius_meter": 2000,
+        "impact": "SO2 Gas Injury. Leaves turn white (bleached) between veins."
+      },
+      {
+        "id": "savar_spot_03",
+        "name": "DEPZ Industrial Area (Ganakbari)",
+        "type": "Textile & Dyeing",
+        "pollutants": ["Synthetic Dyes", "Microplastics", "Chlorine"],
+        "coordinates": { "lat": 23.9048, "lng": 90.2764 },
+        "danger_radius_meter": 1500,
+        "impact": "Chemical burn on crops if wastewater is used. Leaves may turn purple/red."
+      },
+      {
+        "id": "savar_spot_04",
+        "name": "Ulail Dyeing Cluster (Karnapara)",
+        "type": "Heavy Dyeing Industry",
+        "pollutants": ["Caustic Soda", "Azo Dyes", "Hot Water"],
+        "coordinates": { "lat": 23.8210, "lng": 90.2650 },
+        "danger_radius_meter": 1200,
+        "impact": "Thermal pollution cooks roots. High pH causes nutrient lockout (Yellowing)."
+      },
+      {
+        "id": "savar_spot_05",
+        "name": "Ashulia Washing Plant Zone",
+        "type": "RMG Washing",
+        "pollutants": ["Detergents", "Bleach", "Pumice Stone Dust"],
+        "coordinates": { "lat": 23.8960, "lng": 90.3270 },
+        "danger_radius_meter": 1000,
+        "impact": "Soil becomes alkaline. Leaves show signs of Iron deficiency (Interveinal chlorosis)."
+      },
+      {
+        "id": "savar_spot_06",
+        "name": "Nayarhat Paper Mill Area",
+        "type": "Paper & Pulp",
+        "pollutants": ["Chlorine", "Lignin", "Mercury"],
+        "coordinates": { "lat": 23.9150, "lng": 90.2300 },
+        "danger_radius_meter": 2000,
+        "impact": "Mercury toxicity. Leaves deform and curl."
+      },
+      {
+        "id": "savar_spot_07",
+        "name": "Birulia Ceramic Industries",
+        "type": "Ceramics",
+        "pollutants": ["Clay Dust", "Lead Glaze Particles"],
+        "coordinates": { "lat": 23.8350, "lng": 90.3000 },
+        "danger_radius_meter": 1000,
+        "impact": "Physical blockage of stomata (Dust coating). Reduced photosynthesis."
+      },
+      {
+        "id": "savar_spot_08",
+        "name": "Fulbaria Chemical Factories",
+        "type": "Chemical Production",
+        "pollutants": ["Solvents", "VOCs"],
+        "coordinates": { "lat": 23.8050, "lng": 90.2900 },
+        "danger_radius_meter": 1500,
+        "impact": "Volatile chemicals cause necrotic spots (dead tissue) on leaves."
+      }
+    ]
+  },
+
+  "sylhet-region": {
+    "zone_name": "Sylhet Division (Tea, Stone & Gas Hub)",
+    "soil_profile": {
+      "soil_type": "Brown Hill Soils & Peat Soil (Haors)",
+      "texture": "Sandy Loam (Hill) / Clay (Haor)",
+      "avg_ph": "4.5 - 5.5",
+      "ph_status": "Highly Acidic",
+      "organic_matter": "High (Peat) / Low (Hills)",
+      "major_deficiencies": ["Magnesium", "Calcium", "Molybdenum"],
+      "toxicity_risk": "Aluminum Toxicity (Acidic Soil) & Silica Dust"
+    },
+    "crop_advice": {
+      "suitable_crops": ["Tea", "Pineapple", "Lemon/Satkora", "Agarwood"],
+      "avoid_crops": ["Wheat", "Cabbage (Sensitive to acidity)", "Lentils"],
+      "irrigation_warning": "Hill streams are safe but acidic. Haor water may carry high sediment."
+    },
+    "industrial_hotspots": [
+      {
+        "id": "sylhet_spot_01",
+        "name": "Jaflong Stone Crushing Zone",
+        "type": "Stone Crushing",
+        "pollutants": ["Silica Dust", "Particulate Matter (PM10)"],
+        "coordinates": { "lat": 25.1633, "lng": 92.0175 },
+        "danger_radius_meter": 3000,
+        "impact": "Thick grey dust layer blocks stomata. Plants suffocate and die."
+      },
+      {
+        "id": "sylhet_spot_02",
+        "name": "Bholaganj White Stone Quarry",
+        "type": "Quarry & Crushing",
+        "pollutants": ["Limestone Dust", "Silica"],
+        "coordinates": { "lat": 25.1500, "lng": 91.7500 },
+        "danger_radius_meter": 2500,
+        "impact": "Dust accumulation reduces growth. Leaves look grey/white."
+      },
+      {
+        "id": "sylhet_spot_03",
+        "name": "Chhatak Cement Factory",
+        "type": "Cement Production",
+        "pollutants": ["Cement Dust", "Alkaline Ash"],
+        "coordinates": { "lat": 25.0398, "lng": 91.6738 },
+        "danger_radius_meter": 3000,
+        "impact": "Alkaline burns. Cement dust reacts with dew/rain to burn leaf tissue."
+      },
+      {
+        "id": "sylhet_spot_04",
+        "name": "Fenchuganj Fertilizer Factory (NGFF)",
+        "type": "Chemical Fertilizer (Urea)",
+        "pollutants": ["Ammonia Gas", "Nitrates"],
+        "coordinates": { "lat": 24.7028, "lng": 91.9422 },
+        "danger_radius_meter": 2000,
+        "impact": "Ammonia Burn. Leaf tips turn black or dark brown rapidly."
+      },
+      {
+        "id": "sylhet_spot_05",
+        "name": "Bibiyana Gas Field Area",
+        "type": "Natural Gas Processing",
+        "pollutants": ["Hydrocarbons", "Heat"],
+        "coordinates": { "lat": 24.6333, "lng": 91.6500 },
+        "danger_radius_meter": 1500,
+        "impact": "Heat stress and localized hydrocarbon contamination."
+      },
+      {
+        "id": "sylhet_spot_06",
+        "name": "Sreemangal Tea Processing Cluster",
+        "type": "Tea Drying Factories",
+        "pollutants": ["Coal Smoke", "Sulfur", "Ash"],
+        "coordinates": { "lat": 24.3065, "lng": 91.7296 },
+        "danger_radius_meter": 1000,
+        "impact": "Soot covers nearby vegetable crops, reducing quality."
+      },
+      {
+        "id": "sylhet_spot_07",
+        "name": "Shahjibazar Power Plant Zone",
+        "type": "Power Plant",
+        "pollutants": ["NOx", "Thermal Discharge"],
+        "coordinates": { "lat": 24.2500, "lng": 91.3800 },
+        "danger_radius_meter": 2000,
+        "impact": "Nitrogen Oxide damage. Leaves show necrotic spots."
+      },
+      {
+        "id": "sylhet_spot_08",
+        "name": "Sylhet Pulp and Paper Mill (Chhatak)",
+        "type": "Paper Industry",
+        "pollutants": ["Chlorine", "Sludge"],
+        "coordinates": { "lat": 25.0450, "lng": 91.6600 },
+        "danger_radius_meter": 1500,
+        "impact": "Chlorine toxicity causes leaf curling and bleaching."
+      }
+    ]
+  }
+}
