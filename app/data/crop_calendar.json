@@ -1,0 +1,22 @@
+{
+  "rice": {
+    "seasons": ["Boro", "Aman", "Aus"],
+    "suitable_zones": ["dhaka-savar", "cumilla-burichang", "sylhet-region", "bogura-agro"],
+    "soil_pref": ["Clay", "Loam"]
+  },
+  "tea": {
+    "seasons": ["All Year"],
+    "suitable_zones": ["sylhet-region"],
+    "soil_pref": ["Acidic Sandy Loam"]
+  },
+  "potato": {
+    "seasons": ["Winter"],
+    "suitable_zones": ["bogura-agro", "cumilla-burichang"],
+    "soil_pref": ["Loam"]
+  },
+  "watermelon": {
+    "seasons": ["Summer"],
+    "suitable_zones": ["khulna-coastal"],
+    "soil_pref": ["Saline Clay"]
+  }
+}

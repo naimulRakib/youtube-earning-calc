@@ -1,0 +1,100 @@
+{
+  "dhaka-savar": {
+    "zone_name": "Savar (Industrial Red Soil)",
+    "unsuitable_crops": [
+      {
+        "crop_id": "root_vegetables",
+        "crop_names": ["Carrot", "Radish", "Turnip", "Beetroot"],
+        "reason": "Heavy Metal Toxicity: Root crops absorb Chromium/Lead from tannery waste in soil.",
+        "severity": "Critical (Health Hazard)"
+      },
+      {
+        "crop_id": "watermelon",
+        "crop_names": ["Watermelon"],
+        "reason": "Soil Texture Mismatch: Red clay soil is too hard for watermelon root penetration.",
+        "severity": "High"
+      }
+    ]
+  },
+  "sylhet-region": {
+    "zone_name": "Sylhet (Acidic Hilly)",
+    "unsuitable_crops": [
+      {
+        "crop_id": "wheat",
+        "crop_names": ["Wheat"],
+        "reason": "Climate Mismatch: Sylhet winters are too short and humid for wheat.",
+        "severity": "High"
+      },
+      {
+        "crop_id": "onion",
+        "crop_names": ["Onion", "Garlic"],
+        "reason": "Acidity Intolerance: Soil pH (4.5-5.5) is too acidic for bulb crops.",
+        "severity": "Medium"
+      },
+      {
+        "crop_id": "pulses",
+        "crop_names": ["Lentil", "Chickpea"],
+        "reason": "Moisture Sensitivity: High soil moisture causes root rot in pulses.",
+        "severity": "High"
+      }
+    ]
+  },
+  "khulna-coastal": {
+    "zone_name": "Khulna (Saline Coastal)",
+    "unsuitable_crops": [
+      {
+        "crop_id": "rice_boro_standard",
+        "crop_names": ["Boro Rice (Standard)", "BR-28", "BR-29"],
+        "reason": "Salinity Stress: Standard rice varieties die in salinity > 4 dS/m. Use 'Binadhan-10'.",
+        "severity": "Critical"
+      },
+      {
+        "crop_id": "tomato",
+        "crop_names": ["Tomato", "Potato"],
+        "reason": "Salt Sensitivity: Leaves burn and yield drops by 80% in saline soil.",
+        "severity": "High"
+      },
+      {
+        "crop_id": "jute",
+        "crop_names": ["Jute"],
+        "reason": "Salinity Intolerance: Young plants cannot survive salt toxicity.",
+        "severity": "High"
+      }
+    ]
+  },
+  "bogura-agro": {
+    "zone_name": "Bogura (Alluvial Floodplain)",
+    "unsuitable_crops": [
+      {
+        "crop_id": "tea",
+        "crop_names": ["Tea"],
+        "reason": "Topography Mismatch: Bogura is flat land; Tea needs sloping land for drainage.",
+        "severity": "Critical"
+      },
+      {
+        "crop_id": "rubber",
+        "crop_names": ["Rubber"],
+        "reason": "Climate/Soil Mismatch: Requires hilly, acidic soil.",
+        "severity": "High"
+      }
+
+    ]
+  },
+  "cumilla-burichang": {
+    "zone_name": "Burichang (River Basin)",
+    "unsuitable_crops": [
+      {
+        "crop_id": "pineapple",
+        "crop_names": ["Pineapple"],
+        "reason": "Drainage Issue: Burichang is flood-prone; Pineapple rots in standing water.",
+        "severity": "High"
+      },
+      {
+        "crop_id": "groundnut",
+        "crop_names": ["Groundnut"],
+        "reason": "Soil Texture: Silty clay soil makes harvesting groundnuts difficult compared to sandy soil.",
+        "severity": "Medium"
+      }
+    ]
+  }
+}

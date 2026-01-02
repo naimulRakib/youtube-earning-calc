@@ -1,0 +1,156 @@
+[
+  {
+    "id": "biotic_blast",
+    "name": "Rice Blast (ব্লাস্ট রোগ)",
+    "type": "Biotic (Fungal)",
+    "visual_signature": {
+      "shape": "Diamond / Eye-shaped (মাকু আকৃতি)",
+      "color": "Gray center with Brown margin",
+      "location": "Leaves, Nodes, or Neck"
+    },
+    "required_conditions": {
+      "humidity_min": 85,
+      "temp_range": [17, 28],
+      "season": ["Boro", "Aman"],
+      "soil_moisture": "Low (Aerobic soil favors Blast)"
+    },
+    "manual_validation": {
+      "question_id": "spot_color",
+      "expected_answer": "yellow_halo"
+    },
+    "remedy_id": "rem_blast_fungicide"
+  },
+  {
+    "id": "biotic_blight",
+    "name": "Bacterial Leaf Blight (পাতা ঝলসানো)",
+    "type": "Biotic (Bacterial)",
+    "visual_signature": {
+      "shape": "Wavy / Undulating stripes along margins",
+      "color": "Straw yellow to White",
+      "location": "Starts at tip, moves down edges"
+    },
+    "required_conditions": {
+      "humidity_min": 70,
+      "weather_event": "Heavy Rain or Storm (spreads bacteria)",
+      "season": ["Aman", "Aus"]
+    },
+    "manual_validation": {
+      "question_id": "symptom_progression",
+      "expected_answer": "top_down"
+    },
+    "remedy_id": "rem_potash_drainage"
+  },
+  {
+    "id": "biotic_brown_spot",
+    "name": "Brown Spot (বাদামী দাগ)",
+    "type": "Biotic (Fungal)",
+    "visual_signature": {
+      "shape": "Circular / Oval (Sesame seed size)",
+      "color": "Dark Brown with Yellow halo",
+      "location": "Randomly scattered on leaf"
+    },
+    "required_conditions": {
+      "soil_deficiency": ["Potassium", "Silicon"],
+      "water_stress": "Drought / Water Scarcity"
+    },
+    "manual_validation": {
+      "question_id": "soil_moisture_visual",
+      "expected_answer": "cracked"
+    },
+    "remedy_id": "rem_balanced_fertilizer"
+  },
+  {
+    "id": "abiotic_nitrogen_burn",
+    "name": "Nitrogen Fertilizer Burn (রাসায়নিক ছ্যাকা)",
+    "type": "Abiotic (Chemical)",
+    "visual_signature": {
+      "shape": "V-Shaped Yellowing",
+      "color": "Golden Yellow tip, Green rest",
+      "location": "Tip only"
+    },
+    "required_conditions": {
+      "history_event": "Recent Urea Application"
+    },
+    "manual_validation": {
+      "question_id": "fertilizer_history",
+      "expected_answer": "1_2_days"
+    },
+    "remedy_id": "rem_flush_water"
+  },
+  {
+    "id": "abiotic_so2_injury",
+    "name": "Industrial SO2 Gas Injury (ইটের ভাটার গ্যাস)",
+    "type": "Abiotic (Pollution)",
+    "visual_signature": {
+      "shape": "Interveinal Bleaching (Stripes)",
+      "color": "White / Pale Straw",
+      "location": "Middle of leaf blade"
+    },
+    "required_conditions": {
+      "nearby_industry": ["Brick Kiln", "Factory"],
+      "weather_event": "Foggy Morning (Traps gas)"
+    },
+    "manual_validation": {
+      "question_id": "neighbor_activity",
+      "expected_answer": "no"
+    },
+    "remedy_id": "rem_water_spray_wash"
+  },
+  {
+    "id": "abiotic_zinc_deficiency",
+    "name": "Zinc Deficiency (জিংক অভাব/খয়রা)",
+    "type": "Abiotic (Nutrient)",
+    "visual_signature": {
+      "shape": "Dusty Brown Spots / Bronzing",
+      "color": "Rusty Brown",
+      "location": "Base of leaf (Older leaves)"
+    },
+    "required_conditions": {
+      "soil_ph": "> 7.0 (Alkaline) or Waterlogged",
+      "season": ["Boro (Cold stress exacerbates it)"]
+    },
+    "manual_validation": {
+      "question_id": "symptom_progression",
+      "expected_answer": "bottom_up"
+    },
+    "remedy_id": "rem_zinc_sulphate"
+  },
+  {
+    "id": "biotic_tungro",
+    "name": "Tungro Virus (টুংরো রোগ)",
+    "type": "Biotic (Viral)",
+    "visual_signature": {
+      "shape": "Stunting / Twisting",
+      "color": "Yellow to Red-Orange",
+      "location": "Whole plant"
+    },
+    "required_conditions": {
+      "pest_presence": "Green Leafhopper",
+      "crop_stage": "Vegetative"
+    },
+    "manual_validation": {
+      "question_id": "visible_insects",
+      "expected_answer": "hopper"
+    },
+    "remedy_id": "rem_insecticide_light_trap"
+  },
+  {
+    "id": "abiotic_heat_shock",
+    "name": "Heat Stress / Sterility (চিটা হওয়া)",
+    "type": "Abiotic (Environment)",
+    "visual_signature": {
+      "shape": "White Empty Grains",
+      "color": "White Panicle",
+      "location": "Grain Head"
+    },
+    "required_conditions": {
+      "temp_min": 35,
+      "crop_stage": "Flowering"
+    },
+    "manual_validation": {
+      "question_id": "crop_stage",
+      "expected_answer": "flowering"
+    },
+    "remedy_id": "rem_maintain_water_level"
+  }
+]

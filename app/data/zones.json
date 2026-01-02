@@ -1,8 +1,9 @@
 {
   "dhaka-savar": {
     "zone_name": "Savar Upazila, Dhaka (Industrial & Textile Hub)",
+    "ae_zone": "Madhupur Tract (AEZ-28)",
     "soil_profile": {
-      "soil_type": "Deep Red Brown Terrace Soil (Madhupur Tract)",
+      "soil_type": "Deep Red Brown Terrace Soil",
       "texture": "Clay Loam (লালচে এটেল মাটি)",
       "avg_ph": "5.5 - 6.0",
       "ph_status": "Acidic",
@@ -10,6 +11,28 @@
       "major_deficiencies": ["Nitrogen", "Zinc", "Boron"],
       "toxicity_risk": "Critical (Chromium VI, Lead, Cadmium, Microplastics)"
     },
+    "fertility_status": {
+      "nitrogen": "Very Low",
+      "phosphorus": "Low",
+      "potassium": "Medium",
+      "sulfur": "Low",
+      "zinc": "Medium",
+      "boron": "Low"
+    },
+    "manual_input_prompts": [
+      {
+        "id": "q_water_color",
+        "question_bn": "সেচের পানির রং কেমন?",
+        "options": ["স্বচ্ছ (Clear)", "কুচকুচে কালো (Black)", "নীল/লাল (Blue/Red Dye)"],
+        "ai_hint": "If Black/Colored -> High probability of Chemical Burn, NOT Disease."
+      },
+      {
+        "id": "q_smell",
+        "question_bn": "মাটিতে বা পানিতে কি বাজে গন্ধ আছে?",
+        "options": ["না", "পচা ডিমের গন্ধ (Sulfur)", "কেমিকেলের গন্ধ"],
+        "ai_hint": "If Sulfur smell -> Root Rot due to Hydrogen Sulfide (H2S)."
+      }
+    ],
     "crop_advice": {
       "suitable_crops": ["Napier Grass", "Maize (Corn)", "Para Grass"],
       "avoid_crops": ["Radish", "Carrot", "Spinach (Absorbs heavy metals)", "Rice (near rivers)"],
@@ -93,6 +116,7 @@
 
   "sylhet-region": {
     "zone_name": "Sylhet Division (Tea, Stone & Gas Hub)",
+    "ae_zone": "Northern and Eastern Hills (AEZ-29)",
     "soil_profile": {
       "soil_type": "Brown Hill Soils & Peat Soil (Haors)",
       "texture": "Sandy Loam (Hill) / Clay (Haor)",
@@ -102,6 +126,28 @@
       "major_deficiencies": ["Magnesium", "Calcium", "Molybdenum"],
       "toxicity_risk": "Aluminum Toxicity (Acidic Soil) & Silica Dust"
     },
+    "fertility_status": {
+      "nitrogen": "Medium",
+      "phosphorus": "Low",
+      "potassium": "Low",
+      "sulfur": "Medium",
+      "zinc": "Medium",
+      "boron": "Low"
+    },
+    "manual_input_prompts": [
+      {
+        "id": "q_dust_layer",
+        "question_bn": "পাতার ওপর কি কোনো ধুলোর আস্তরণ আছে?",
+        "options": ["না", "ধূসর পাথরের গুঁড়া (Stone Dust)", "সিমেন্টের গুঁড়া"],
+        "ai_hint": "If Dust -> Diagnose as 'Stomata Blockage' (Abiotic), suggest washing with water."
+      },
+      {
+        "id": "q_flash_flood",
+        "question_bn": "জমি কি গত সপ্তাহে পাহাড়ি ঢলে ডুবেছিল?",
+        "options": ["না", "হ্যাঁ (পলি জমেছে)", "হ্যাঁ (বালি জমেছে)"],
+        "ai_hint": "If Sand -> Soil texture altered, suggest organic manure."
+      }
+    ],
     "crop_advice": {
       "suitable_crops": ["Tea", "Pineapple", "Lemon/Satkora", "Agarwood"],
       "avoid_crops": ["Wheat", "Cabbage (Sensitive to acidity)", "Lentils"],
@@ -179,6 +225,58 @@
         "coordinates": { "lat": 25.0450, "lng": 91.6600 },
         "danger_radius_meter": 1500,
         "impact": "Chlorine toxicity causes leaf curling and bleaching."
+      }
+    ]
+  },
+
+  "cumilla-burichang": {
+    "zone_name": "Burichang, Cumilla (Gumti River Basin)",
+    "ae_zone": "Old Meghna Estuarine Floodplain (AEZ-19)",
+    "soil_profile": {
+      "soil_type": "Non-Calcareous Dark Grey Floodplain Soil",
+      "texture": "Silty Loam to Silty Clay Loam (পলি দোআঁশ)",
+      "avg_ph": "6.0 - 7.5",
+      "ph_status": "Slightly Acidic to Neutral",
+      "organic_matter": "Medium (2.1%)",
+      "major_deficiencies": ["Zinc", "Nitrogen", "Organic Matter"],
+      "toxicity_risk": "Low (Occasional Arsenic in groundwater)"
+    },
+    "fertility_status": {
+      "nitrogen": "Low",
+      "phosphorus": "Medium",
+      "potassium": "Low",
+      "sulfur": "Medium",
+      "zinc": "Low",
+      "boron": "Medium"
+    },
+    "manual_input_prompts": [
+      {
+        "id": "q_water_level",
+        "question_bn": "জমিতে কি পানি জমে আছে?",
+        "options": ["না, শুকনা", "হ্যাঁ, গোঁড়ালি সমান", "হ্যাঁ, হাঁটু সমান"],
+        "ai_hint": "If Knee deep -> Check for Stem Rot. If Dry -> Check for Blast."
+      },
+      {
+        "id": "q_nearby_brick",
+        "question_bn": "জমির ১ কি.মি. এর মধ্যে কি ইটের ভাটা আছে?",
+        "options": ["হ্যাঁ", "না"],
+        "ai_hint": "If Yes -> Prioritize 'SO2 Burn' over 'Blight'."
+      }
+    ],
+    "crop_advice": {
+      "suitable_crops": ["Rice (Aman/Boro)", "Potato", "Wheat", "Mustard"],
+      "avoid_crops": ["Groundnut (Needs loose soil)"],
+      "irrigation_warning": "Groundwater arsenic levels may be elevated in some pockets."
+    },
+    "industrial_hotspots": [
+      {
+        "id": "burichang_spot_01",
+        "name": "Gumti River Brick Kiln Cluster",
+        "type": "Brick Kiln",
+        "pollutants": ["SO2", "Ash"],
+        "coordinates": { "lat": 23.5600, "lng": 91.1300 },
+        "danger_radius_meter": 2000,
+        "impact": "Leaf tip burn due to sulfur smoke."
       }
     ]
   }

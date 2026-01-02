@@ -1,9 +1,9 @@
 'use client';
 
 import { useState } from 'react';
-import { supabase } from './lib/supabase'; //Ensure this points to your supabase client setup
+import { supabase } from '../lib/supabase'; //Ensure this points to your supabase client setup
 import { fetchWeather } from "@/utils/weatherApi";
-import { analyzeCropHealth } from "./actions/analyze"; // Import Server Action directly
+import { analyzeCropHealth } from "../actions/analyze"; // Import Server Action directly
 import { 
   Camera, MapPin, CheckCircle, AlertTriangle, 
   Loader2, Leaf, Beaker, Sprout 
@@ -157,7 +157,7 @@ export default function DiagnosisPage() {
       {/* HEADER */}
       <div className="text-center mb-8">
         <h1 className="text-3xl font-bold text-green-800 flex items-center justify-center gap-2">
-          <Sprout className="w-8 h-8" /> GreenHydra AI
+          <Sprout className="w-8 h-8" /> AgroSentinel AI
         </h1>
         <p className="text-slate-500">Intelligent Crop Disease & Pollution Detector</p>
       </div>

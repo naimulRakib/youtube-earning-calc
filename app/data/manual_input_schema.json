@@ -1,0 +1,125 @@
+{
+  "manual_input_schema": {
+    "step_1_visuals": [
+      {
+        "id": "symptom_progression",
+        "question": "দাগগুলো কি নিচের পাতা থেকে শুরু হয়েছে, নাকি ওপরের?",
+        "options": [
+          { "value": "bottom_up", "label": "নিচ থেকে ওপরে (Bottom Up)", "inference": "Nutrient Deficiency (N, P, K)" },
+          { "value": "top_down", "label": "ওপর থেকে নিচে (Top Down)", "inference": "Sunburn or Spray Drift" },
+          { "value": "random", "label": "সব জায়গায় (Random)", "inference": "Fungal/Bacterial Attack" }
+        ]
+      },
+      {
+        "id": "texture_test",
+        "question": "আক্রান্ত পাতায় হাত দিলে কেমন লাগে?",
+        "options": [
+          { "value": "powdery", "label": "হাতে পাউডার লাগে", "inference": "Powdery Mildew" },
+          { "value": "sticky", "label": "আঠালো", "inference": "Insect Attack (Aphids/Hoppers)" },
+          { "value": "rough", "label": "খসখসে/শুকনা", "inference": "Burn or Blast" }
+        ]
+      },
+      {
+        "id": "spot_color",
+        "question": "দাগের রঙ কেমন?",
+        "options": [
+          { "value": "yellow_halo", "label": "মাঝখানে ছাই, চারপাশে হলুদ বর্ডার", "inference": "Fungal Blast or Leaf Spot" },
+          { "value": "water_soaked", "label": "পানিতে ভেজা বা পচা রঙ", "inference": "Bacterial Rot" },
+          { "value": "rusty", "label": "মরচে ধরা লাল", "inference": "Zinc Deficiency or Rust" }
+        ]
+      }
+    ],
+    "step_2_history": [
+      {
+        "id": "spray_history",
+        "question": "গত ৪৮ ঘণ্টায় কি কোনো ওষুধ স্প্রে করেছেন?",
+        "options": [
+          { "value": "yes_herbicide", "label": "হ্যাঁ, ঘাস মারার ওষুধ", "risk": "High Chemical Burn" },
+          { "value": "yes_pesticide", "label": "হ্যাঁ, পোকা মারার ওষুধ", "risk": "Possible Overdose" },
+          { "value": "no", "label": "না", "risk": "Low" }
+        ]
+      },
+      {
+        "id": "fertilizer_history",
+        "question": "জমিতে শেষ কবে ইউরিয়া দিয়েছেন?",
+        "options": [
+          { "value": "1_2_days", "label": "১-২ দিন আগে", "risk": "Nitrogen Burn Risk" },
+          { "value": "15_days", "label": "১৫ দিনের বেশি", "risk": "Nitrogen Deficiency Risk" }
+        ]
+      },
+      {
+        "id": "crop_stage",
+        "question": "ধানের বর্তমান বয়স কত?",
+        "options": [
+          { "value": "seedling", "label": "বীজতলা (Seedling)", "inference": "Check for Cold Injury or Thrips" },
+          { "value": "vegetative", "label": "বাড়ন্ত পর্যায় (Vegetative)", "inference": "Check for Stem Borer or Blast" },
+          { "value": "flowering", "label": "ফুল বা শীষ আসার সময় (Flowering)", "inference": "Check for False Smut or Heat Shock" }
+        ]
+      }
+    ],
+    "step_3_environment": [
+      {
+        "id": "water_smell",
+        "question": "জমির কাদামাটিতে কি পচা গন্ধ আছে?",
+        "options": [
+          { "value": "rotten_egg", "label": "হ্যাঁ, পচা ডিমের গন্ধ", "inference": "Root Rot (H2S Toxicity)" },
+          { "value": "none", "label": "না, স্বাভাবিক", "inference": "Normal" }
+        ]
+      },
+      {
+        "id": "neighbor_activity",
+        "question": "পাশের জমিতে কি কেউ স্প্রে করেছে?",
+        "options": [
+          { "value": "yes", "label": "হ্যাঁ", "inference": "Check for Spray Drift" },
+          { "value": "no", "label": "না", "inference": "Localized Issue" }
+        ]
+      },
+      {
+        "id": "soil_moisture_visual",
+        "question": "মাটির অবস্থা এখন কেমন?",
+        "options": [
+          { "value": "cracked", "label": "ফেটে চৌচির (Cracked)", "inference": "Drought Stress" },
+          { "value": "submerged", "label": "পানির নিচে ডুবে আছে", "inference": "Hypoxia / Root Suffocation" },
+          { "value": "muddy", "label": "কাদাময় (Normal)", "inference": "Optimal" }
+        ]
+      }
+    ],
+    "step_4_weather_observation": [
+      {
+        "id": "morning_fog",
+        "question": "আজ সকালে কি কুয়াশা ছিল?",
+        "options": [
+          { "value": "heavy_fog", "label": "হ্যাঁ, ঘন কুয়াশা", "inference": "High Risk of Blight/Blast" },
+          { "value": "clear", "label": "না, পরিষ্কার আকাশ", "inference": "Low Fungal Risk" }
+        ]
+      },
+      {
+        "id": "recent_rain",
+        "question": "গত ২৪ ঘণ্টায় কি ভারী বৃষ্টি হয়েছে?",
+        "options": [
+          { "value": "heavy_rain", "label": "হ্যাঁ, ভারী বৃষ্টি", "inference": "Check for Bacterial Spread" },
+          { "value": "no_rain", "label": "না", "inference": "Check for Water Stress" }
+        ]
+      }
+    ],
+    "step_5_pest_check": [
+      {
+        "id": "visible_insects",
+        "question": "গাছে কি কোনো পোকা দেখা যাচ্ছে?",
+        "options": [
+          { "value": "stem_borer", "label": "মাজরা পোকা (Stem Borer)", "inference": "Pest Attack" },
+          { "value": "hopper", "label": "ঘাসফড়িং/কারেন্ট পোকা (Hopper)", "inference": "Virus Vector Risk" },
+          { "value": "none", "label": "না, কোনো পোকা নেই", "inference": "Likely Disease or Abiotic" }
+        ]
+      },
+      {
+        "id": "stem_condition",
+        "question": "গাছের গোড়া বা কান্ড কি নরম হয়ে পচে যাচ্ছে?",
+        "options": [
+          { "value": "rotting", "label": "হ্যাঁ, পচা ও দুর্গন্ধযুক্ত", "inference": "Stem Rot (Bacterial/Fungal)" },
+          { "value": "firm", "label": "না, শক্ত আছে", "inference": "Leaf Issue Only" }
+        ]
+      }
+    ]
+  }
+}
