@@ -159,7 +159,7 @@ export default function DiagnosisPage() {
         <h1 className="text-3xl font-bold text-green-800 flex items-center justify-center gap-2">
           <Sprout className="w-8 h-8" /> GreenHydra AI
         </h1>
-        <p className="text-slate-500">Intelligent Crop Disease & Pollution Detector</p>
+        <p className="text-slate-500">Intelligent Crop Disease & Pollution Detector: You can use only rice leaf or verifying regional and seasonal food suitability</p>
       </div>
 
       {/* --- STEP 1: UPLOAD & LOCATION --- */}
